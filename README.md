@@ -1,4 +1,4 @@
-This is a python script for extracting data from Fitocracy from the activities feed on Fitocracy, and turning it into JSON format which can then be imported into a MongoDB database. Not a web-scraping script: you need to grab the HTML manually and pass it to the script. 
+This is a python script for extracting data from Fitocracy from the activities feed, and turning it into JSON format which can then be imported into a MongoDB database. Not a web-scraping script: you need to grab the HTML manually and pass it to the script. 
 
 Fitocracy does provide a means of exporting data in the form of CSV files but there are a few problems with this:
 1. They only do it on a per-exercise basis, which means downloading one file for each different exercise manually (which for me was 93 files) and then concatenating them.
@@ -15,7 +15,7 @@ Eventually I decided that since the data was correctly preserved in the feed whe
 
 
 ### Usage
-1. First go to [https://www.fitocracy.com/profile/YOURUSERNAME/?activities] and scroll down repeatedly until all of the workouts are loaded (it only loads 15 at a time so this may take a while)
+1. First go to https://www.fitocracy.com/profile/YOURUSERNAME/?activities and scroll down repeatedly until all of the workouts are loaded (it only loads 15 at a time so this may take a while)
 2. Using developer tools, select the workout list and look for a div with class="activity-stream-content"
 3. Right click, copy element, and paste into a text file
 4. Run the script with:  
