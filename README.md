@@ -25,6 +25,12 @@ Where INPUT_FILE_PATH is the path to the file you copied the HTML into. If no ou
 `mongoimport --db [DATABASE_NAME] --collection [COLLECTION_NAME] --file [PATH_TO_JSON_FILE] --jsonArray`
 
 
+### Caveats
+1. All fitocracy specific stuff is ignored, namely points, "props" and comments from other users (your own comments are kept though
+2. Fitocracy allows you to group multiple exercises together within a single workout, this ignores such grouping and instead merges the exercise into one "group" per workout
+3. This should work on most exercises but I have only actually tested it on the exercises I have performed in the past
+
+
 ### Example output
 Turns this:
 ```
@@ -40,7 +46,12 @@ Shaun tracked a workout on 26 Jan, 2020:
         100 kg x 10
 
     Push-Up:
-        20 reps
+        20 reps (PR)
+        
+    --------------
+        Your-user-name: The squats were easy but didn't have time to do too many
+        Your-user-name: Oh a PR on the push-ups, sweet!
+        Some-other-user: Nice workout!
 ```
 into:
 ```json
@@ -63,7 +74,7 @@ into:
                     "other": "light hills"
                 }
             ],
-            "comment": "headwind!"
+            "exercise_comment": "headwind!"
         },
         {
             "exercise_id": 2,
@@ -73,17 +84,17 @@ into:
                 {
                     "set_id": 1,
                     "weight": {"value": 15, "unit": "kg"},
-                    "reps": 15,
+                    "reps": 15
                 },
                 {
                     "set_id": 2,
                     "weight": {"value": 80, "unit": "kg"},
-                    "reps": 5,
+                    "reps": 5
                 },
                 {
                     "set_id": 3,
                     "weight": {"value": 100, "unit": "kg"},
-                    "reps": 10,
+                    "reps": 10
                 }
             ]
         },
@@ -95,10 +106,12 @@ into:
                 {
                     "set_id": 1,
                     "reps": 20,
+                    "pr": true
                 }
             ]
         }
-    ]
+    ],
+    "workout_comments": "The squats were easy but didn't have time to do too many \n\n Oh a PR on the push-ups, sweet!"
 }
 ```
 (except without the whitespace)
