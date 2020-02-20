@@ -19,7 +19,7 @@ Eventually I decided that since the data was correctly preserved in the feed whe
 2. Using developer tools, select the workout list and look for a div with class="activity-stream-content"
 3. Right click, copy element, and paste into a text file
 4. Run the script with:  
-`fitoparse.py INPUT_FILE_PATH [OUTPUT_FILE_PATH]`  
+`python3 fitoparse.py INPUT_FILE_PATH [OUTPUT_FILE_PATH]`  
 Where INPUT_FILE_PATH is the path to the file you copied the HTML into. If no output file path is given it will use output.json in the same directory that the script is placed in
 5. You can then import it to a MongoDB database with:  
 `mongoimport --db [DATABASE_NAME] --collection [COLLECTION_NAME] --file [PATH_TO_JSON_FILE] --jsonArray`
