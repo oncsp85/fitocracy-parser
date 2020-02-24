@@ -1,0 +1,21 @@
+EXAMPLE OF WHAT YOU GET BACK FROM STRAVA OAUTH
+==============================================
+{
+    "token_type": "Bearer",
+    "expires_at": 1582568721,
+    "expires_in": 21600,
+    "refresh_token": "CENSORED",
+    "access_token": "CENSORED",
+    "athlete": {
+        "id": 12345,
+        "username": "perkins_shaun",
+        "resource_state": 2,
+        "firstname": "Shaun",
+        "lastname": "Perkins",
+        "city": "Gloucester",
+        "state": "England",
+        "country": "United Kingdom",
+        "sex": "M",
+        ....etc, etc
+    }
+}
