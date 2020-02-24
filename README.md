@@ -78,7 +78,7 @@ into:
         },
         {
             "exercise_id": 2,
-            "type": "resistance",
+            "type": "weights",
             "name": "Squats",
             "sets": [
                 {
@@ -100,7 +100,7 @@ into:
         },
         {
             "exercise_id": 3,
-            "type": "resistance",
+            "type": "bodyweight",
             "name": "Push-Up",
             "sets": [
                 {
