@@ -110,7 +110,7 @@ def build_dictionary(activities):
 		current_set = {
 			"set_id": set_id,
 			"distance": {
-				"value": int(activity["distance"]) / 1609,
+				"value": round(int(activity["distance"]) / 1609, 1),
 				"unit": "mi"
 			},
 			"time": activity["moving_time"]
