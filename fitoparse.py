@@ -141,8 +141,9 @@ def parse_set(exercise):
 			reps = float(reps)
 			if int(reps) == float(reps):
 				reps = int(reps)
-			parsed_set["reps"] = reps if weight == 0 else { 
-					"reps": reps, "weight": {"value": weight, "unit": unit} }
+			if weight != 0:
+				parsed_set["weight"] = {"value": weight, "unit": unit}
+			parsed_set["reps"] = reps
 	return parsed_set
 
 
