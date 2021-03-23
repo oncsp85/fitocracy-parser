@@ -32,7 +32,7 @@ def parse_fitocracy_feed(input_path, output_path="output.json"):
 
 		if date != current_date:
 			current_date = date
-			workout_id = 1
+			workout_id = 0
 		parsed_workout = {
 			"workout_id": workout_id, "date": date, "exercises": []
 		}
@@ -40,7 +40,7 @@ def parse_fitocracy_feed(input_path, output_path="output.json"):
 		
 		#########  EXERCISE  #########
 		exercise_list = workout.find_all(attrs={"class":"action_prompt"})
-		ex_id = 1
+		ex_id = 0
 		for exercise in exercise_list:
 			name = exercise.string
 			# Skip past any "groups" that have been found
@@ -51,7 +51,7 @@ def parse_fitocracy_feed(input_path, output_path="output.json"):
 
 			#########  SET  #########
 			set_list = exercise.next_sibling.next_sibling.find_all("li")
-			set_id = 1
+			set_id = 0
 			for s in set_list:
 				pr = False
 				if s.has_attr("class") and "stream_note" in s["class"]:
