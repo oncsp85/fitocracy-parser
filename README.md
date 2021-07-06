@@ -22,7 +22,8 @@ Eventually I decided that since the data was correctly preserved in the feed whe
 `python3 fitoparse.py INPUT_FILE_PATH [OUTPUT_FILE_PATH]`  
 Where INPUT_FILE_PATH is the path to the file you copied the HTML into. If no output file path is given it will use output.json in the same directory that the script is placed in
 5. You can then import it to a MongoDB database with:  
-`mongoimport --db [DATABASE_NAME] --collection [COLLECTION_NAME] --file [PATH_TO_JSON_FILE] --jsonArray`
+`mongoimport --db [DATABASE_NAME] --collection [COLLECTION_NAME] --file [PATH_TO_JSON_FILE] --jsonArray`  
+(Note: As of MongoDB version 4.4 (July 2020), mongoimport is no longer included as part of the main MongoDB package, you will need to install [Mongo Database Tools](https://docs.mongodb.com/database-tools/installation/installation/) seperately in order to use it)
 
 
 ### Caveats
